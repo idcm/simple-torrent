@@ -17,7 +17,7 @@ Vendor:   NgTech Ltd
 License:  AGPLv3
 Group:    System Environment/Daemons
 URL:      https://github.com/idcm/simple-torrent/tags
-Source0:  https://github.com/idcm/simple-torrent/archive/1.2.11.tar.gz
+Source0:  https://github.com/idcm/simple-torrent/archive/latest.tar.gz
 Source1:  cloud.service
 Source2:  cloud.sysconfig
 Source3:  example_config.yaml
@@ -38,7 +38,7 @@ Requires(postun):  systemd
 Simple-torrent an opensource Bittorrent client written in GoLang.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-latest
 
 %build
 go build -o %{name}
