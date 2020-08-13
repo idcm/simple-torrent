@@ -26,6 +26,7 @@ Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:     golang
 BuildRequires:     git
 BuildRequires:     go-bindata
+BuildRequires:     g++
 BuildRequires:     systemd
 Requires(post):    systemd
 Requires(preun):   systemd
