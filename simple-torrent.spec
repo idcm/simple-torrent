@@ -105,5 +105,4 @@ userdel %{uid}
 %{_unitdir}/cloud.service
 
 %changelog
-* Tue Jan 07 2020 Eliezer Croitoru <eliezer@ngtech.co.il>
-- Release 2.0.0 Stable.
+* First build 2020-8-13.
