@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 install -p -d -m 0755 %{buildroot}%{_sysconfdir}/%{name}
 
 # install binary
-install -p -D -m 0755 %{_builddir}/%{name}-%{version}/%{name} %{buildroot}%{_bindir}/%{name}
+install -p -D -m 0755 %{_builddir}/%{name}-latest/%{name} %{buildroot}%{_bindir}/%{name}
 
 # install unit file
 install -p -D -m 0644 \
