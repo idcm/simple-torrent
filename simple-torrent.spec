@@ -9,7 +9,7 @@
 
 Name:     simple-torrent
 Version:  1.2.11
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary:  Bittorrent Client Written in GoLang
 Epoch:    1
 Packager: idcm <idcm@live.cn>
