@@ -1,0 +1,3 @@
+# Configures of Cloud-Torrent
+
+CLOUD_OPTS=--port 8064 --host [::1] --config-path /etc/simple-torrent/simple-torrent.yaml --title "Simple Torrent"
