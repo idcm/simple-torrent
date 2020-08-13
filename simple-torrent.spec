@@ -12,7 +12,7 @@ Version:  1.2.11
 Release:  2%{?dist}
 Summary:  Bittorrent Client Written in GoLang
 Epoch:    1
-Packager: Eliezer Croitoru <eliezer@ngtech.co.il>
+Packager: idcm <idcm@live.cn>
 Vendor:   NgTech Ltd
 License:  AGPLv3
 Group:    System Environment/Daemons
