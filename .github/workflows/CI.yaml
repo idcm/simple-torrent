@@ -1,0 +1,45 @@
+name: CI
+on:
+  # See the documentation for more intricate event dispatch here:
+  # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+  push:
+    branches:
+    - "!dependabot/*"
+    - "*"
+  pull_request:
+    branches:
+    - "*"
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+  
+    - name: Set up Go 1.14
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.14
+      id: go
+
+    - name: Set GOPATH
+      run: |
+        # temporary fix for https://github.com/actions/setup-go/issues/14
+        echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)"
+        echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/bin"
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+      
+    - name: Get dependencies
+      run: |
+        go get -v -u github.com/shuLhan/go-bindata/...
+        go get -v -t -d ./...
+
+    - name: Build
+      run: go build
+        
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
