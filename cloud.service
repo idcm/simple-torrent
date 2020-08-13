@@ -1,0 +1,15 @@
+[Unit]
+Description=Simple Torrent
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/usr/
+
+User=cloud
+Group=cloud
+EnvironmentFile=/etc/sysconfig/simple-torrent
+ExecStart=/usr/bin/simple-torrent  $CLOUD_OPTS
+
+[Install]
+WantedBy=multi-user.target
