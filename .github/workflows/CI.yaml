@@ -37,12 +37,6 @@ jobs:
 
     - name: Build
       run: go build
-    
-    - uses: dev-drprasad/delete-older-releases@v0.1.0
-      with:
-       keep_latest: 1
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
