@@ -40,8 +40,7 @@ Simple-torrent an opensource Bittorrent client written in GoLang.
 %setup -q -n %{name}-%{version}
 
 %build
-GITVER=$(git describe --tags)
-go build -o %{name} -ldflags "-s -w -X main.VERSION=$GITVER"
+go build -o %{name}
 
 
 %install
