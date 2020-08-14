@@ -17,12 +17,12 @@ Vendor:   NgTech Ltd
 License:  AGPLv3
 Group:    System Environment/Daemons
 URL:      https://github.com/idcm/simple-torrent/tags
-Source0:  https://github.com/idcm/simple-torrent/archive/latest.tar.gz
+Source0:  https://github.com/idcm/simple-torrent/archive/%{version}.tar.gz
 Source1:  cloud.service
 Source2:  cloud.sysconfig
 Source3:  example_config.yaml
 
-Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:     golang
 BuildRequires:     git
 BuildRequires:     go-bindata
@@ -38,7 +38,7 @@ Requires(postun):  systemd
 Simple-torrent an opensource Bittorrent client written in GoLang.
 
 %prep
-%setup -q -n %{name}-latest
+%setup -q -n %{name}-%{version}
 
 %build
 go build -o %{name} -ldflags "-s -w -X main.VERSION=%{version}"
@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 install -p -d -m 0755 %{buildroot}%{_sysconfdir}/%{name}
 
 # install binary
-install -p -D -m 0755 %{_builddir}/%{name}-latest/%{name} %{buildroot}%{_bindir}/%{name}
+install -p -D -m 0755 %{_builddir}/%{name}-%{version}/%{name} %{buildroot}%{_bindir}/%{name}
 
 # install unit file
 install -p -D -m 0644 \
@@ -104,4 +104,5 @@ fi
 %{_unitdir}/cloud.service
 
 %changelog
+* Update .spec 2020-8-14.
 * First build 2020-8-13.
