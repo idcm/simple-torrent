@@ -22,7 +22,7 @@ Source1:  cloud.service
 Source2:  cloud.sysconfig
 Source3:  example_config.yaml
 
-Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:     golang
 BuildRequires:     git
 BuildRequires:     go-bindata
