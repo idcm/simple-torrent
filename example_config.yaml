@@ -4,7 +4,7 @@ disableipv6: false
 disabletrackers: false
 donecmd: ""
 donecmdthreshold: 30s
-downloaddirectory: /mattermost/cloud
+downloaddirectory: /var/lib/cloud
 downloadrate: Unlimited
 enableseeding: true
 enableupload: true
@@ -19,4 +19,4 @@ scraperurl: https://raw.githubusercontent.com/boypt/simple-torrent/master/scrape
 seedratio: 1.5
 trackerlisturl: https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt
 uploadrate: High
-watchdirectory: /mattermost/torrents
+watchdirectory: ""
