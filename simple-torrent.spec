@@ -13,7 +13,6 @@ Release:  4%{?dist}
 Summary:  Bittorrent Client Written in GoLang
 Epoch:    1
 Packager: idcm <idcm@live.cn>
-Vendor:   NgTech Ltd
 License:  AGPLv3
 Group:    System Environment/Daemons
 URL:      https://github.com/idcm/simple-torrent/tags
@@ -46,7 +45,7 @@ go build -o %{name} -ldflags "-s -w -X main.VERSION=%{version}"
 
 %install
 rm -rf %{buildroot}
-
+install -p -d -m 0755 %{buildroot}%{_sharedstatedir}/cloud
 install -p -d -m 0755 %{buildroot}%{_sysconfdir}/%{name}
 
 # install binary
@@ -102,6 +101,7 @@ fi
 %config(noreplace) %{_sysconfdir}/sysconfig/simple-torrent
 %config(noreplace) %{_sysconfdir}/%{name}
 %{_unitdir}/cloud.service
+%attr(755,%{uid},%{gid}) %dir %{_sharedstatedir}/cloud
 
 %changelog
 * Update .spec 2020-8-14.
