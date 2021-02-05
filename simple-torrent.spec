@@ -8,7 +8,7 @@
 
 
 Name:     simple-torrent
-Version:  1.2.11
+Version:  1.2.12
 Release:  4%{?dist}
 Summary:  Bittorrent Client Written in GoLang
 Epoch:    1
