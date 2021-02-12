@@ -3,12 +3,12 @@
 %define  uid   cloud
 %define  gid   cloud
 %define  nuid  974
-%define  ngid  972
+%define  ngid  974
 
 
 
 Name:     simple-torrent
-Version:  1.2.12
+Version:  1.2.13
 Release:  4%{?dist}
 Summary:  Bittorrent Client Written in GoLang
 Epoch:    1
